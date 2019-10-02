@@ -1,5 +1,11 @@
 ## Práctica DOO - IWVG
 
+### Modificación de herencia en CardStack
+Se intenta priorizar la composición frente a la herencia. La herencia de la clase CardStack no es una herencia limpia. Crea una clase hija sin niguna funcionalidad añadida.
+Se modifica la herencia por composición.
+> Problema: código repetido
+
+
 ### Unificación de formato
 Modificación de algunos saltos de linea para mantener el estilo único del formato
 

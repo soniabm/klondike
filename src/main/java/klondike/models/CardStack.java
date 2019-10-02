@@ -1,8 +1,9 @@
 package klondike.models;
 
+import java.util.List;
 import java.util.Stack;
 
-public abstract class CardStack {
+public class CardStack {
 
     protected Stack<Card> cards;
 
@@ -26,4 +27,23 @@ public abstract class CardStack {
         this.cards.push(card);
     }
 
+    public int size() {
+        return this.cards.size();
+    }
+
+    public void addAll(List<Card> cards) {
+        this.cards.addAll(cards);
+    }
+
+    public Stack<Card> getCards() {
+        return this.cards;
+    }
+
+    public void add(Card card) {
+        this.cards.add(card);
+    }
+
+    public void removeAll(List<Card> cards) {
+        this.cards.removeAll(cards);
+    }
 }

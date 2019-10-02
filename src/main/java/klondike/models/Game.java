@@ -44,9 +44,8 @@ public class Game {
         if (this.stock.empty()) {
             return Error.EMPTY_STOCK;
         }
-        Card card = this.stock.pop();
-        card.flip();
-        this.waste.push(card);
+
+        this.waste.push(this.stock.pop());
         return null;
     }
 
@@ -72,9 +71,7 @@ public class Game {
             return Error.EMPTY_WASTE;
         }
         while (!this.waste.empty()) {
-            Card card = this.waste.pop();
-            card.flip();
-            this.stock.push(card);
+            this.stock.push(this.waste.pop());
         }
         return null;
     }
@@ -148,15 +145,15 @@ public class Game {
     }
 
     public Card peekStock() {
-        return this.peekIfNotEmpty(this.stock);
+        return this.stock.empty() ? null : this.stock.peek();
     }
 
     public Card peekWaste() {
-        return this.peekIfNotEmpty(this.waste);
+        return this.waste.empty() ? null : this.waste.peek();
     }
 
     public Card peekFoundation(Suit suit) {
-        return this.peekIfNotEmpty(this.foundations.get(suit));
+        return this.foundations.get(suit).empty() ? null : this.foundations.get(suit).peek();
     }
 
     private Card peekIfNotEmpty(CardStack cardStack) {
