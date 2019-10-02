@@ -106,9 +106,4 @@ public class IO {
         System.out.println("ERROR DE FORMATO! "
                 + "Introduzca un valor con formato " + formato + ".");
     }
-
-    public static void clear() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
 }
