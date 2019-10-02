@@ -16,9 +16,8 @@ public class Card {
         this.facedUp = false;
     }
 
-    public Card flip() {
+    public void flip() {
         this.facedUp = !this.facedUp;
-        return this;
     }
 
     public boolean isNextTo(Card card) {

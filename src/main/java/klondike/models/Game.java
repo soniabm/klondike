@@ -44,7 +44,9 @@ public class Game {
         if (this.stock.empty()) {
             return Error.EMPTY_STOCK;
         }
-        this.waste.push(this.stock.pop().flip());
+        Card card = this.stock.pop();
+        card.flip();
+        this.waste.push(card);
         return null;
     }
 
@@ -70,7 +72,9 @@ public class Game {
             return Error.EMPTY_WASTE;
         }
         while (!this.waste.empty()) {
-            this.stock.push(this.waste.pop().flip());
+            Card card = this.waste.pop();
+            card.flip();
+            this.stock.push(card);
         }
         return null;
     }
