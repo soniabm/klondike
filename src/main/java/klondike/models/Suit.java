@@ -8,6 +8,7 @@ public enum Suit {
     PIKES(Color.BLACK, 'P');
 
     private final Color color;
+
     private final char initial;
 
     Suit(Color color, char initial) {

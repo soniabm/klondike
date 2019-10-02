@@ -1,5 +1,9 @@
 ## Práctica DOO - IWVG
 
+### Unificación de formato
+Modificación de algunos saltos de linea para mantener el estilo único del formato
+
+
 ### Limpieza de código
 Se eliminan dos métodos que no estaban siendo usados. YAGNI
 > método getSuit() de la clase Foundation \
