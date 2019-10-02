@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class Pile {
+public class Pile implements CardStack{
 
-    private CardStack cardStack;
+    private Stack<Card> cardStack;
 
     private int numberOfFaceUpCards;
 
     public Pile(List<Card> cards) {
-        this.cardStack = new CardStack();
+        this.cardStack = new Stack<>();
         this.numberOfFaceUpCards = 0;
         this.cardStack.addAll(cards);
         if (!this.cardStack.empty()) {
@@ -33,7 +33,7 @@ public class Pile {
 
     public List<Card> getTop(int numberOfCards) {
         assert numberOfCards <= this.numberOfFaceUpCards;
-        return new ArrayList<>(this.cardStack.getCards().subList(this.cardStack.size() - numberOfCards, this.cardStack.size()));
+        return new ArrayList<>(this.cardStack.subList(this.cardStack.size() - numberOfCards, this.cardStack.size()));
     }
 
     public void addToTop(List<Card> cards) {
@@ -57,11 +57,17 @@ public class Pile {
         return this.numberOfFaceUpCards;
     }
 
+    @Override
     public boolean empty() {
         return this.cardStack.empty();
     }
 
+    @Override
+    public Card peek() {
+        return this.cardStack.peek();
+    }
+
     public Stack<Card> getCards() {
-        return this.cardStack.getCards();
+        return this.cardStack;
     }
 }

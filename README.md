@@ -1,5 +1,8 @@
 ## Práctica DOO - IWVG
 
+### Implementación de interface para recuperar el polimorfismo perdido
+Se elimina la composición ya que no evitaba la repetición de código. La clase CardStack pasa a ser un interface para recuperar el polimorfismo perdido en la clase Game
+
 ### Modificación de herencia en CardStack
 Se intenta priorizar la composición frente a la herencia. La herencia de la clase CardStack no es una herencia limpia. Crea una clase hija sin niguna funcionalidad añadida.
 Se modifica la herencia por composición.

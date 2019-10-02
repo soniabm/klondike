@@ -145,15 +145,15 @@ public class Game {
     }
 
     public Card peekStock() {
-        return this.stock.empty() ? null : this.stock.peek();
+        return this.peekIfNotEmpty(this.foundations.get(stock));
     }
 
     public Card peekWaste() {
-        return this.waste.empty() ? null : this.waste.peek();
+        return this.peekIfNotEmpty(this.foundations.get(waste));
     }
 
     public Card peekFoundation(Suit suit) {
-        return this.foundations.get(suit).empty() ? null : this.foundations.get(suit).peek();
+        return this.peekIfNotEmpty(this.foundations.get(suit));
     }
 
     private Card peekIfNotEmpty(CardStack cardStack) {
